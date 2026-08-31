@@ -275,6 +275,7 @@ const [loadingPayments, setLoadingPayments] = useState(true);
     };
 
     fetchBedReservations();
+
     const fetchNotifications = async () => {
   try {
     const response = await fetch(
@@ -304,6 +305,16 @@ const [loadingPayments, setLoadingPayments] = useState(true);
 };
 
 fetchNotifications();
+
+const handleWindowFocus = () => {
+  fetchBedReservations();
+};
+
+window.addEventListener("focus", handleWindowFocus);
+
+return () => {
+  window.removeEventListener("focus", handleWindowFocus);
+};
   }, []);
 
 
