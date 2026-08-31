@@ -404,6 +404,8 @@ return () => {
         "Bed reservation request submitted successfully. Please wait for admin confirmation."
       );
 
+      await fetchBedReservations();
+
       setTimeout(() => {
         closeBedReservation();
       }, 1800);
