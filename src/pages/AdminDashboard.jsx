@@ -127,28 +127,28 @@ const [patientSearch, setPatientSearch] = useState("");
           bedsResult,
         ] = await Promise.all([
           getJson(
-            "http://localhost:5000/api/admin/appointments"
+            "https://healthcare-management-system-cjhw.onrender.com/api/admin/appointments"
           ),
           getJson(
-            "http://localhost:5000/api/admin/doctors"
+            "https://healthcare-management-system-cjhw.onrender.com/api/admin/doctors"
           ),
           getJson(
-            "http://localhost:5000/api/admin/patients"
+            "https://healthcare-management-system-cjhw.onrender.com/api/admin/patients"
           ),
           getJson(
-            "http://localhost:5000/api/admin/stats"
+            "https://healthcare-management-system-cjhw.onrender.com/api/admin/stats"
           ),
           getJson(
-            "http://localhost:5000/api/admin/reports"
+            "https://healthcare-management-system-cjhw.onrender.com/api/admin/reports"
           ),
           getJson(
-            "http://localhost:5000/api/admin/contact-messages"
+            "https://healthcare-management-system-cjhw.onrender.com/api/admin/contact-messages"
           ),
           getJson(
-            "http://localhost:5000/api/admin/payments"
+            "https://healthcare-management-system-cjhw.onrender.com/api/admin/payments"
           ),
           getJson(
-            "http://localhost:5000/api/admin/bed-reservations"
+            "https://healthcare-management-system-cjhw.onrender.com/api/admin/bed-reservations"
           ),
         ]);
 
@@ -239,7 +239,7 @@ const [patientSearch, setPatientSearch] = useState("");
 
     const refreshSupportMessages = async () => {
       const result = await getJson(
-        "http://localhost:5000/api/admin/contact-messages"
+        "https://healthcare-management-system-cjhw.onrender.com/api/admin/contact-messages"
       );
 
       if (mounted && result.ok) {
@@ -258,13 +258,13 @@ const [patientSearch, setPatientSearch] = useState("");
         statsResult,
       ] = await Promise.all([
         getJson(
-          "http://localhost:5000/api/admin/doctors"
+          "https://healthcare-management-system-cjhw.onrender.com/api/admin/doctors"
         ),
         getJson(
-          "http://localhost:5000/api/admin/patients"
+          "https://healthcare-management-system-cjhw.onrender.com/api/admin/patients"
         ),
         getJson(
-          "http://localhost:5000/api/admin/stats"
+          "https://healthcare-management-system-cjhw.onrender.com/api/admin/stats"
         ),
       ]);
 
@@ -334,7 +334,7 @@ const [patientSearch, setPatientSearch] = useState("");
       setBedLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/admin/bed-reservations"
+        "https://healthcare-management-system-cjhw.onrender.com/api/admin/bed-reservations"
       );
 
       const data = await response.json();
@@ -370,7 +370,7 @@ const [patientSearch, setPatientSearch] = useState("");
       });
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/beds/availability?${query.toString()}`
+        `https://healthcare-management-system-cjhw.onrender.com/api/admin/beds/availability?${query.toString()}`
       );
 
       const data = await response.json();
@@ -404,7 +404,7 @@ const [patientSearch, setPatientSearch] = useState("");
       setBedActionLoading(reservation.id);
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/bed-reservations/${reservation.id}/status`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/admin/bed-reservations/${reservation.id}/status`,
         {
           method: "PUT",
           headers: {
@@ -465,7 +465,7 @@ const [patientSearch, setPatientSearch] = useState("");
 ) => {
   try {
     const response = await fetch(
-      `http://localhost:5000/api/admin/appointments/${appointmentId}/status`,
+      `https://healthcare-management-system-cjhw.onrender.com/api/admin/appointments/${appointmentId}/status`,
       {
         method: "PUT",
         headers: {
@@ -512,7 +512,7 @@ const [patientSearch, setPatientSearch] = useState("");
   const updateUserStatus = async (userId, status) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/${userId}/status`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/admin/users/${userId}/status`,
         {
           method: "PUT",
           headers: {
@@ -562,7 +562,7 @@ const [patientSearch, setPatientSearch] = useState("");
   const markContactMessageRead = async (messageId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/contact-messages/${messageId}/read`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/admin/contact-messages/${messageId}/read`,
         {
           method: "PUT",
         }
@@ -604,7 +604,7 @@ const [patientSearch, setPatientSearch] = useState("");
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/contact-messages/${messageId}`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/admin/contact-messages/${messageId}`,
         {
           method: "DELETE",
         }
@@ -783,7 +783,7 @@ const [patientSearch, setPatientSearch] = useState("");
       setReplyMessage("");
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/contact-messages/${selectedMessage.id}/reply`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/admin/contact-messages/${selectedMessage.id}/reply`,
         {
           method: "PUT",
           headers: {

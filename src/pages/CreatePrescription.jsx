@@ -39,7 +39,7 @@ function CreatePrescription() {
     const fetchAppointments = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/doctor-appointments/${encodeURIComponent(
+          `https://healthcare-management-system-cjhw.onrender.com/api/doctor-appointments/${encodeURIComponent(
             loggedInUser.name
           )}`
         );
@@ -95,7 +95,7 @@ function CreatePrescription() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/prescriptions",
+        "https://healthcare-management-system-cjhw.onrender.com/api/prescriptions",
         {
           method: "POST",
           headers: {

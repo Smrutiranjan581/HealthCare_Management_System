@@ -129,7 +129,7 @@ function Home() {
         setNotificationsLoading(true);
 
         const response = await fetch(
-          `http://localhost:5000/api/notifications/${loggedInUser.id}?role=${encodeURIComponent(
+          `https://healthcare-management-system-cjhw.onrender.com/api/notifications/${loggedInUser.id}?role=${encodeURIComponent(
             String(loggedInUser?.role || "patient").toLowerCase()
           )}`
         );
@@ -154,7 +154,7 @@ function Home() {
 
         try {
           const response = await fetch(
-            `http://localhost:5000/api/support-requests/${loggedInUser.id}?role=${encodeURIComponent(role)}`
+            `https://healthcare-management-system-cjhw.onrender.com/api/support-requests/${loggedInUser.id}?role=${encodeURIComponent(role)}`
           );
 
           const data = await response.json();
@@ -207,7 +207,7 @@ function Home() {
         if (!loggedInUser?.id) return;
 
         const response = await fetch(
-          `http://localhost:5000/api/notifications/${loggedInUser.id}?role=${encodeURIComponent(
+          `https://healthcare-management-system-cjhw.onrender.com/api/notifications/${loggedInUser.id}?role=${encodeURIComponent(
             String(loggedInUser?.role || "patient").toLowerCase()
           )}`
         );
@@ -354,7 +354,7 @@ function Home() {
           : "";
 
       const response = await fetch(
-        `http://localhost:5000/api/users/${loggedInUser.id}/profile`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/users/${loggedInUser.id}/profile`,
         {
           method: "PUT",
           headers: {
@@ -475,7 +475,7 @@ function Home() {
       setPasswordMessage("");
 
       const response = await fetch(
-        `http://localhost:5000/api/users/${loggedInUser.id}/password`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/users/${loggedInUser.id}/password`,
         {
           method: "PUT",
           headers: {
@@ -531,7 +531,7 @@ function Home() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/notifications/${notification.id}/read`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/notifications/${notification.id}/read`,
         {
           method: "PUT",
         }
@@ -2706,7 +2706,7 @@ function Home() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/contact",
+        "https://healthcare-management-system-cjhw.onrender.com/api/contact",
         {
           method: "POST",
           headers: {

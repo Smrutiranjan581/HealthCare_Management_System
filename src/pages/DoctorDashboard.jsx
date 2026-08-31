@@ -67,7 +67,7 @@ function DoctorDashboard() {
     const fetchDoctorAppointments = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/doctor-appointments/${encodeURIComponent(
+          `https://healthcare-management-system-cjhw.onrender.com/api/doctor-appointments/${encodeURIComponent(
             loggedInUser.name
           )}`
         );
@@ -179,7 +179,7 @@ function DoctorDashboard() {
       setProfileSuccess("");
 
       const response = await fetch(
-        `http://localhost:5000/api/users/${user.id}/profile`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/users/${user.id}/profile`,
         {
           method: "PUT",
           headers: {
@@ -1567,7 +1567,7 @@ function DoctorDashboard() {
                       setPasswordSuccess("");
 
                       const response = await fetch(
-                        `http://localhost:5000/api/users/${user.id}/password`,
+                        `https://healthcare-management-system-cjhw.onrender.com/api/users/${user.id}/password`,
                         {
                           method: "PUT",
                           headers: {

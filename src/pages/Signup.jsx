@@ -74,7 +74,7 @@ function Signup() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/signup",
+        "https://healthcare-management-system-cjhw.onrender.com/api/signup",
         {
           method: "POST",
           headers: {

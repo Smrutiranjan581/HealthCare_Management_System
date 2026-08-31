@@ -1,6 +1,6 @@
-CREATE DATABASE healthcare_db;
+-- CREATE DATABASE healthcare_db;-- 
 
-USE healthcare_db;
+USE sql12836276;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,

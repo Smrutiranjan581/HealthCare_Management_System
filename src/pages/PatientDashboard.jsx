@@ -113,7 +113,7 @@ const [loadingPayments, setLoadingPayments] = useState(true);
     const fetchAppointments = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/appointments/${loggedInUser.id}`
+          `https://healthcare-management-system-cjhw.onrender.com/api/appointments/${loggedInUser.id}`
         );
 
         const data = await response.json();
@@ -136,7 +136,7 @@ const [loadingPayments, setLoadingPayments] = useState(true);
     const fetchPrescriptions = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/prescriptions/${loggedInUser.id}`
+          `https://healthcare-management-system-cjhw.onrender.com/api/prescriptions/${loggedInUser.id}`
         );
 
         const data = await response.json();
@@ -162,7 +162,7 @@ const [loadingPayments, setLoadingPayments] = useState(true);
     const fetchMedicalReports = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/medical-reports/${loggedInUser.id}`
+          `https://healthcare-management-system-cjhw.onrender.com/api/medical-reports/${loggedInUser.id}`
         );
 
         const data = await response.json();
@@ -199,7 +199,7 @@ const [loadingPayments, setLoadingPayments] = useState(true);
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/payments/${loggedInUser.id}`,
+          `https://healthcare-management-system-cjhw.onrender.com/api/payments/${loggedInUser.id}`,
           {
             method: "GET",
             headers: {
@@ -248,7 +248,7 @@ const [loadingPayments, setLoadingPayments] = useState(true);
     const fetchBedReservations = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/bed-reservations/${loggedInUser.id}`
+          `https://healthcare-management-system-cjhw.onrender.com/api/bed-reservations/${loggedInUser.id}`
         );
 
         const data = await response.json();
@@ -278,7 +278,7 @@ const [loadingPayments, setLoadingPayments] = useState(true);
     const fetchNotifications = async () => {
   try {
     const response = await fetch(
-      `http://localhost:5000/api/notifications/${loggedInUser.id}`
+      `https://healthcare-management-system-cjhw.onrender.com/api/notifications/${loggedInUser.id}`
     );
 
     const data = await response.json();
@@ -353,7 +353,7 @@ fetchNotifications();
       setBedReservationMessage("");
 
       const response = await fetch(
-        "http://localhost:5000/api/bed-reservations",
+        "https://healthcare-management-system-cjhw.onrender.com/api/bed-reservations",
         {
           method: "POST",
           headers: {
@@ -434,7 +434,7 @@ fetchNotifications();
       setBedPaymentLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/bed-reservations/payment",
+        "https://healthcare-management-system-cjhw.onrender.com/api/bed-reservations/payment",
         {
           method: "POST",
           headers: {
@@ -509,7 +509,7 @@ fetchNotifications();
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/appointments/${appointmentId}/cancel`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/appointments/${appointmentId}/cancel`,
         {
           method: "PUT",
         }
@@ -574,7 +574,7 @@ fetchNotifications();
       setRescheduleLoading(true);
 
       const response = await fetch(
-        `http://localhost:5000/api/appointments/${rescheduleAppointment.id}/reschedule`,
+        `https://healthcare-management-system-cjhw.onrender.com/api/appointments/${rescheduleAppointment.id}/reschedule`,
         {
           method: "PUT",
           headers: {
@@ -650,7 +650,7 @@ fetchNotifications();
       setPaymentLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/payments",
+        "https://healthcare-management-system-cjhw.onrender.com/api/payments",
         {
           method: "POST",
           headers: {
@@ -2755,7 +2755,7 @@ fetchNotifications();
               onClick={async () => {
                 try {
                   const response = await fetch(
-                    `http://localhost:5000/api/notifications/${notification.id}/read`,
+                    `https://healthcare-management-system-cjhw.onrender.com/api/notifications/${notification.id}/read`,
                     {
                       method: "PUT",
                     }
@@ -3656,7 +3656,7 @@ fetchNotifications();
                     setPasswordSuccess("");
 
                     const response = await fetch(
-                      `http://localhost:5000/api/users/${user.id}/password`,
+                      `https://healthcare-management-system-cjhw.onrender.com/api/users/${user.id}/password`,
                       {
                         method: "PUT",
                         headers: {

@@ -35,7 +35,7 @@ function CreateMedicalReport() {
     const fetchAppointments = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/doctor-appointments/${encodeURIComponent(
+          `https://healthcare-management-system-cjhw.onrender.com/api/doctor-appointments/${encodeURIComponent(
             loggedInUser.name
           )}`
         );
@@ -73,7 +73,7 @@ function CreateMedicalReport() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/medical-reports",
+        "https://healthcare-management-system-cjhw.onrender.com/api/medical-reports",
         {
           method: "POST",
           headers: {
