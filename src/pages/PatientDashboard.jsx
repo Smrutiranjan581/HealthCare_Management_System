@@ -2687,6 +2687,7 @@ return () => {
 <section
   className="dashboard-section"
   id="notifications"
+  style={{ display: "none" }}
 >
   <div className="dashboard-section-header">
     <h2>Notifications</h2>
