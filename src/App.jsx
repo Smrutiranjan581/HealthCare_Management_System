@@ -2016,15 +2016,17 @@ function Home() {
               <p>{dept[2]}</p>
               {!isAdmin && !isDoctor && (
                 <motion.a
-                  href={`/appointment?department=${encodeURIComponent(
-                    dept[1]
-                  )}`}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="department-btn"
-                >
-                  📅 Book Appointment
-                </motion.a>
+  href={
+    isLoggedIn
+      ? `/appointment?department=${encodeURIComponent(dept[1])}`
+      : "/login"
+  }
+  whileHover={{ scale: 1.03 }}
+  whileTap={{ scale: 0.97 }}
+  className="department-btn"
+>
+  📅 Book Appointment
+</motion.a>
               )}
             </motion.div>
           ))}
@@ -2128,15 +2130,17 @@ function Home() {
 
                 {!isAdmin && !isDoctor && (
                   <motion.a
-                    href={`/appointment?doctor=${encodeURIComponent(
-                      doctor.name
-                    )}`}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="doctor-btn"
-                  >
-                    Book Appointment →
-                  </motion.a>
+  href={
+    isLoggedIn
+      ? `/appointment?doctor=${encodeURIComponent(doctor.name)}`
+      : "/login"
+  }
+  whileHover={{ scale: 1.03 }}
+  whileTap={{ scale: 0.97 }}
+  className="doctor-btn"
+>
+  Book Appointment →
+</motion.a>
                 )}
               </div>
             </motion.div>
@@ -2472,7 +2476,7 @@ function Home() {
             >
               {selectedService.title === "Easy Appointment" ? (
                 <a
-                  href="/appointment"
+                  href={isLoggedIn ? "/appointment" : "/login"}
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -2674,6 +2678,11 @@ function Home() {
     } catch {
       loggedInUser = null;
     }
+
+    if (!loggedInUser) {
+  window.location.href = "/login";
+  return;
+}
 
     const issueType = String(
       formData.get("issueType") || ""
