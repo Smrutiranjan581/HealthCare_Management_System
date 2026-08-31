@@ -312,8 +312,13 @@ const handleWindowFocus = () => {
 
 window.addEventListener("focus", handleWindowFocus);
 
+const bedReservationRefreshTimer = setInterval(() => {
+  fetchBedReservations();
+}, 5000);
+
 return () => {
   window.removeEventListener("focus", handleWindowFocus);
+  clearInterval(bedReservationRefreshTimer);
 };
   }, []);
 
